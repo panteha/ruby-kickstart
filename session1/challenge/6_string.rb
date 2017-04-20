@@ -7,5 +7,15 @@
 # odds_and_evens("abcdefg",true)    # => "bdf"
 # odds_and_evens("abcdefg",false)   # => "aceg"
 
+
 def odds_and_evens(string, return_odds)
+	arr = string.split('')
+	ch_num = arr.count
+	new_arr = []
+	i = return_odds ? 1 : 0
+	while (i <= ch_num)
+		new_arr.push(arr [i])
+		i += 2
+	end
+	return new_arr.join
 end
