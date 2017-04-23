@@ -8,3 +8,12 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase (number)
+  new_hash = Hash.new()
+  even_array = []
+  for i in 1..number
+    even_array << i if i.even?
+    new_hash[i] = even_array.clone if i.odd?
+  end
+  new_hash
+end
