@@ -73,12 +73,3 @@ end
   end
 
 end
-
-sports = [
-   HTMLTag.new('li', 'baseball', :multiline => false, :color => :red) ,
-   HTMLTag.new('li', 'soccer',   :multiline => false, :color => :green, :font => :sans_serif) ,
-   HTMLTag.new('li', 'football', :multiline => false, :color => :blue,  :font => :monospace) ,
- ]
-
- ordered_list = HTMLTag.new 'ol' , sports.join , :multiline => true
-puts ordered_list
