@@ -17,3 +17,16 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(parameter, *elements)
+  arr = []
+  i = 0
+    while (i < elements.size)
+      if !elements[i] == !elements[i+1]
+        arr << !parameter
+      else
+        arr << parameter
+      end
+      i += 2
+  end
+arr
+end
