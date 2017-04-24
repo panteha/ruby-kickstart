@@ -30,5 +30,7 @@
 # end
 
 
-def array_init
+def array_init (a = 5, &block)
+  block ||= Proc.new { |i| (100*i).to_s}
+  Array.new(a, &block)
 end
