@@ -29,4 +29,18 @@
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 def shared(a, b)
+  hash = Hash.new
+  for i in 0..a.size-1
+    hash[a[i]] ||= [nil,nil]
+    hash[a[i]][0] = true
+  end
+  for i in 0..b.size-1
+    hash[b[i]] ||= [nil,nil]
+    hash[b[i]][1] = true
+  end
+  intersection = []
+  hash.each do
+    |key, value| intersection << key if value == [true, true]
+  end
+  [hash, intersection]
 end
